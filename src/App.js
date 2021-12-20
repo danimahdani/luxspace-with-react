@@ -1,9 +1,18 @@
 import './assets/css/app.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import HomePage from 'pages/HomePage';
+import Details from 'pages/Details';
+
+
 
 function App() {
   return (
     <div className="App">
-      <p className="text-3xl text-purple-500">Hell oWorld</p>
+      <Router>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/categories/:idc" component={Details} />
+      </Router>,
     </div>
   );
 }
